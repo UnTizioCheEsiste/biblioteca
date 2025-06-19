@@ -32,7 +32,7 @@
 
 <div class="navbar">
     <div class="links">
-        <a href="utenti.php">Utenti</a>
+        <a href="../utenti/get.php">Utenti</a>
         <a href="prestiti.php">Prestiti</a>
         <a href="libri.php">Libri</a>
         <a href="statistiche.php">Statistiche</a>

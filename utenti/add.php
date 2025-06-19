@@ -1,6 +1,6 @@
 <?php
-require_once("strumenti/connect.php");
-include("strumenti/navbar.php");
+require_once("../connect.php");
+include("../navbar.php");
 
 $error_msg = "";
 
@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <form method="POST" action="">
         <label>Matricola:</label>
-        <input type="text" name="matricola" required>
+        <input type="number" name="matricola" required>
 
         <label>Nome:</label>
         <input type="text" name="nome" required>
