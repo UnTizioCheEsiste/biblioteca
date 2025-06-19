@@ -58,6 +58,10 @@ while ($row = mysqli_fetch_assoc($res_aut)) {
             font-family: Arial, sans-serif;
         }
 
+        h2 {
+            margin-bottom: 10px;
+        }
+
         .container {
             width: 600px;
             margin: 20px auto;

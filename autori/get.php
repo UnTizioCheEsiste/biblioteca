@@ -16,6 +16,10 @@ $result = mysqli_query($connection, $query);
             font-family: Arial, sans-serif;
         }
 
+        h2 {
+            margin-bottom: 10px;
+        }
+
         .container {
             width: 90%;
             margin: 20px auto;
@@ -61,7 +65,7 @@ $result = mysqli_query($connection, $query);
     <div class="container">
         <h2>Elenco Autori</h2>
 
-        <a href="../autori/search.php" class="btn">🔍 Ricerca Autori</a>
+        <a href="../autori/search.php" class="btn">Ricerca Autori</a>
 
         <table>
             <thead>

@@ -37,6 +37,10 @@ if ($nome !== "" || $cognome !== "") {
             font-family: Arial, sans-serif;
         }
 
+        h2 {
+            margin-bottom: 10px;
+        }
+
         .container {
             width: 90%;
             margin: 20px auto;
@@ -91,7 +95,7 @@ if ($nome !== "" || $cognome !== "") {
         <form method="get">
             <input type="text" name="nome" placeholder="Nome" value="<?= htmlspecialchars($nome) ?>">
             <input type="text" name="cognome" placeholder="Cognome" value="<?= htmlspecialchars($cognome) ?>">
-            <button type="submit" class="btn">🔍 Cerca</button>
+            <button type="submit" class="btn">Cerca</button>
             <button type="button" class="btn" onclick="window.location.href='get.php'">Esci</button>
         </form>
 

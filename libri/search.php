@@ -42,6 +42,10 @@ $result = mysqli_query($connection, $query);
             font-family: Arial, sans-serif;
         }
 
+        h2 {
+            margin-bottom: 10px;
+        }
+
         .container {
             width: 90%;
             margin: 20px auto;
@@ -95,7 +99,7 @@ $result = mysqli_query($connection, $query);
 
         <form method="get">
             <input type="text" name="titolo" placeholder="Inserisci titolo..." value="<?= htmlspecialchars($titolo_ricerca) ?>">
-            <button type="submit" class="btn">🔍 Cerca</button>
+            <button type="submit" class="btn">Cerca</button>
             <button type="button" class="btn" onclick="window.location.href='get.php'">Esci</button>
         </form>
 

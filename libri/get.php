@@ -67,9 +67,9 @@ require_once("../connect.php"); // Assicura che $conn sia un oggetto mysqli
         <h2>Elenco dei Libri</h2>
 
         <div class="buttons">
-            <a href="../libri/add.php" class="btn">➕ Aggiungi Libro</a>
-            <a href="../libri/search.php" class="btn">🔍 Ricerca per Titolo</a>
-            <a href="../libri/auth_search.php" class="btn">👤 Ricerca per Autore</a>
+            <a href="../libri/add.php" class="btn">Aggiungi Libro</a>
+            <a href="../libri/search.php" class="btn">Ricerca per Titolo</a>
+            <a href="../libri/auth_search.php" class="btn">Ricerca per Autore</a>
         </div>
 
         <table>

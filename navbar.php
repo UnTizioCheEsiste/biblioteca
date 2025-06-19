@@ -11,7 +11,7 @@
     }
 
     .navbar {
-        background-color: #00171F;
+        background-color: #003459;
         overflow: hidden;
         border-radius: 4px;
         display: flex;
@@ -33,7 +33,7 @@
 <div class="navbar">
     <div class="links">
         <a href="../utenti/get.php">Utenti</a>
-        <a href="prestiti.php">Prestiti</a>
+        <a href="../prestiti/get.php">Prestiti</a>
         <a href="../libri/get.php">Libri</a>
         <a href="statistiche.php">Statistiche</a>
         <a href='../autori/get.php'>Autori</a>
