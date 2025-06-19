@@ -46,6 +46,46 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Nuovo Utente</title>
     <link rel="stylesheet" type="text/css" href="../global.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        .container {
+            width: 600px;
+            margin: 20px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-right: 10px;
+            padding: 8px 12px;
+            background-color: #003459;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .btn:hover {
+            background-color: #00171F;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 6px;
+            margin-bottom: 12px;
+        }
+    </style>
 </head>
 
 <body>
@@ -55,27 +95,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     <?php endif; ?>
 
-    <h2>Nuovo Utente</h2>
+    <div class="container">
+        <h2>Nuovo Utente</h2>
 
-    <form method="POST" action="">
-        <label>Matricola:</label>
-        <input type="number" name="matricola" required>
+        <form method="POST" action="">
+            <label>Matricola:</label>
+            <input type="number" name="matricola" required>
 
-        <label>Nome:</label>
-        <input type="text" name="nome" required>
+            <label>Nome:</label>
+            <input type="text" name="nome" required>
 
-        <label>Cognome:</label>
-        <input type="text" name="cognome" required>
+            <label>Cognome:</label>
+            <input type="text" name="cognome" required>
 
-        <label>Indirizzo:</label>
-        <input type="text" name="indirizzo" required>
+            <label>Indirizzo:</label>
+            <input type="text" name="indirizzo" required>
 
-        <label>Telefono:</label>
-        <input type="number" name="telefono" required>
+            <label>Telefono:</label>
+            <input type="number" name="telefono" required>
 
-        <button type="submit">Inserisci</button>
-        <button type="button" class="exit-btn" onclick="window.location.href='get.php'">Esci</button>
-    </form>
+            <button type="submit" class="btn">Inserisci</button>
+            <button type="button" class="btn" onclick="window.location.href='get.php'">Esci</button>
+        </form>
+    </div>
 </body>
 
 </html>
