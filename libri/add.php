@@ -106,6 +106,11 @@ while ($row = mysqli_fetch_assoc($res_aut)) {
             background-color: #f8d7da;
             color: #721c24;
         }
+
+        p {
+            font-size: 11px;
+            color: gray;
+        }
     </style>
 </head>
 
@@ -151,6 +156,7 @@ while ($row = mysqli_fetch_assoc($res_aut)) {
                     </option>
                 <?php endforeach; ?>
             </select>
+            <p>Per selezionare più di un autore, utilizzare la combinazione <i>ctrl + click</i>.</p>
 
             <button type="submit" class="btn">Aggiungi Libro</button>
             <button type="button" class="btn" onclick="window.location.href='get.php'">Esci</button>
