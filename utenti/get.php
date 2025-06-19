@@ -68,7 +68,7 @@ include("../navbar.php");
         <div class="actions" class="buttons">
             <a href="add.php" class="btn">➕ Aggiungi Utente</a>
             <!-- RICORDATI DI CAMBIARE IL storico_utente.php !-->
-            <a href="storico_utente.php" class="btn">📚 Storico Prestiti</a>
+            <a href="history.php" class="btn">📚 Storico Prestiti</a>
         </div>
 
         <table>
