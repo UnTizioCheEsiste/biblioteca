@@ -7,8 +7,8 @@ $error_msg = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $matricola = $_POST["matricola"];
-    $nome = $_POST["nome"];
-    $cognome = $_POST["cognome"];
+    $nome = mysqli_real_escape_string($connection, $_POST["nome"]);
+    $cognome = mysqli_real_escape_string($connection, string: $_POST["cognome"]);;
     $indirizzo = $_POST["indirizzo"];
     $telefono = $_POST["telefono"];
 

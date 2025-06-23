@@ -5,32 +5,36 @@ $msg = "";
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $isbn = $_POST["isbn"];
-    $titolo = $_POST["titolo"];
+    $titolo = mysqli_real_escape_string($connection, string: $_POST["titolo"]);
     $anno = $_POST["anno"];
     $lingua = $_POST["lingua"];
     $succursale = $_POST["succursale"];
     $autori = $_POST["autori"] ?? [];
 
-
-    $book_sql = "INSERT INTO Libro (ISBN, titolo, anno_pubblicazione, lingua)
-                    VALUES ('$isbn', '$titolo', '$anno', '$lingua')";
-    $query = mysqli_query($connection, $book_sql);
-
-    if ($query) {
-
-        foreach ($autori as $id_autore) {
-            $auth_sql = "INSERT INTO AutoreLibro (id_autore, ISBN)
-                             VALUES ('$id_autore', '$isbn')";
-            mysqli_query($connection, $auth_sql);
-        }
-
-        $copy_sql = "INSERT INTO CopiaLibro (ISBN, succursale)
-                        VALUES ('$isbn', '$succursale')";
-        mysqli_query($connection, $copy_sql);
-
-        $msg = "✅ Libro inserito con successo!";
+    $isbn_check = mysqli_query($connection, "SELECT 1 FROM Libro WHERE ISBN = '$isbn' LIMIT 1");
+    if (mysqli_num_rows($isbn_check) > 0) {
+        $msg = "Errore: ISBN già presente nel database.";
     } else {
-        $msg = "Errore: " . mysqli_error($connection);
+        $book_sql = "INSERT INTO Libro (ISBN, titolo, anno_pubblicazione, lingua)
+                    VALUES ('$isbn', '$titolo', '$anno', '$lingua')";
+        $query = mysqli_query($connection, $book_sql);
+
+        if ($query) {
+
+            foreach ($autori as $id_autore) {
+                $auth_sql = "INSERT INTO AutoreLibro (id_autore, ISBN)
+                             VALUES ('$id_autore', '$isbn')";
+                mysqli_query($connection, $auth_sql);
+            }
+
+            $copy_sql = "INSERT INTO CopiaLibro (ISBN, succursale)
+                        VALUES ('$isbn', '$succursale')";
+            mysqli_query($connection, $copy_sql);
+
+            $msg = "✅ Libro inserito con successo!";
+        } else {
+            $msg = "Errore: " . mysqli_error($connection);
+        }
     }
 }
 
